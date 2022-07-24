@@ -6,14 +6,14 @@
 
 interface Course {
   name: string;
-  duration: number; // in weeks
+  duration?: number; // in weeks
   educator: string;
 }
 
 class CreateCourseService {
-  execute({ name, duration, educator }: Course): void {
+  execute({ name, duration = 8, educator }: Course): void {
     console.log(
-      `Creating course ${name}, with duration of ${duration} weeks, and educator ${educator}`
+      `Creating course ${name}, with duration of ${duration} week(s), and educator ${educator}`
     );
   }
 }
